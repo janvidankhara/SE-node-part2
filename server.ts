@@ -18,7 +18,8 @@ import LikeController from "./controllers/LikeController";
 import mongoose from "mongoose";
 
 // build the connection string
-const connectionString = `mongodb+srv://janvidankhara:janvi%4025@cluster0.luchw.mongodb.net/tuiter?retryWrites=true&w=majority`;
+
+const connectionString = `mongodb+srv://janvidankhara:janvi%4025@cluster0.9ylnd.mongodb.net/tuiter?retryWrites=true&w=majority`;
 // connect to the database
 mongoose.connect(connectionString);
 
