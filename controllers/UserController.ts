@@ -126,13 +126,25 @@ export default class UserController implements UserControllerI {
     deleteAllUsers = (req: Request, res: Response) =>
         UserController.userDao.deleteAllUsers()
             .then((status) => res.send(status));
-    
+
+    /**
+     * Logging in by login credentials from the body.
+     * @param {Request} req Represents request from client
+     * @param {Response} res Represents response to client, including user profile
+     * describing all the details of user if logged in successfully
+     */
     login = (req: Request, res: Response) =>
         UserController.userDao.findUserByCredentials(req.body.username, req.body.password)
             .then(user => {
                 res.json(user)
             });
-    
+
+    /**
+     * Register user from the JSON body.
+     * @param {Request} req Represents request from client
+     * @param {Response} res Represents response to client, including user profile
+     * describing all the details of user if logged in successfully
+     */
     register = (req: Request, res: Response) =>
         UserController.userDao.findUserByUsername(req.body.username)
             .then(user => {

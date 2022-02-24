@@ -1,5 +1,8 @@
 import {Request, Response} from "express";
 
+/**
+ * @file Declares RESTful API for the resource course
+ */
 export default interface CourseController {
     findAllCourses(req: Request, res: Response): Promise<any>;
     findAllCoursesDeep(req: Request, res: Response): Promise<any>;

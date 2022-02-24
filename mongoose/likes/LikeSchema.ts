@@ -1,6 +1,14 @@
+/**
+ * @file Implements mongoose schema for likes
+ */
 import mongoose, {Schema} from "mongoose";
 import Like from "../../models/likes/Like";
 
+/**
+ * @typedef Like Represents likes for tuits
+ * @property {Tuit} tuit represents liked tuits
+ * @property {User} likedBy represents user who liked tuits
+ */
 const LikeSchema = new mongoose.Schema<Like>({
     tuit: {type: Schema.Types.ObjectId, ref: "TuitModel"},
     likedBy: {type: Schema.Types.ObjectId, ref: "UserModel"},

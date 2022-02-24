@@ -1,5 +1,8 @@
 import {Request, Response} from "express";
 
+/**
+ * @file Declares RESTful API for the resource user
+ */
 export default interface UserControllerI {
     findAllUsers (req: Request, res: Response): void;
     findUserById (req: Request, res: Response): void;
