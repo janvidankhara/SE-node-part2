@@ -21,14 +21,21 @@ import MessageController from "./controllers/MessageController";
 import mongoose from "mongoose";
 
 // build the connection string
+const PROTOCOL = "mongodb+srv";
+const DB_USERNAME = "janvidankhara";
+const DB_PASSWORD = "janvi%4025";
+const HOST = "cluster0.9ylnd.mongodb.net";
+const DB_NAME = "tuiter";
+const DB_QUERY = "retryWrites=true&w=majority";
+const connectionString = `${PROTOCOL}://${DB_USERNAME}:${DB_PASSWORD}@${HOST}/${DB_NAME}?${DB_QUERY}`;
 
-const connectionString = `mongodb+srv://janvidankhara:janvi%4025@cluster0.9ylnd.mongodb.net/tuiter?retryWrites=true&w=majority`;
 // connect to the database
 mongoose.connect(connectionString);
 
 const app = express();
+var cors = require('cors');
 app.use(express.json());
-
+app.use(cors());
 app.get('/', (req: Request, res: Response) =>
     res.send('Welcome!'));
 
