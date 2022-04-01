@@ -39,7 +39,7 @@ mongoose.connect(connectionString);
 const app = express();
 app.use(cors({
     credentials: true,
-    origin: process.env.CORS_ORIGIN
+    origin: 'https://luxury-shortbread-b20d3c.netlify.app'
 }));
 
 let sess = {
