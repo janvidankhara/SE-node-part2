@@ -113,7 +113,7 @@ export default class LikeController implements LikeControllerI {
             let tuit = await tuitDao.findTuitById(tid);
             if (userAlreadyLikedTuit) {
                 await LikeController.likeDao.userUnlikesTuit(userId, tid);
-                tuit.stats.likes = howManyLikedTuit + 1;
+                tuit.stats.likes = howManyLikedTuit - 1;
             } else {
                 await LikeController.likeDao.userLikesTuit(userId, tid);
                 tuit.stats.likes = howManyLikedTuit + 1;
