@@ -22,6 +22,7 @@ const AuthenticationController = (app: Express) => {
         const match = await bcrypt.compare(password, existingUser.password);
 
         if (match) {
+            console.log("check");
             existingUser.password = '*****';
             // @ts-ignore
             req.session['profile'] = existingUser;
