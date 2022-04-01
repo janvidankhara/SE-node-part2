@@ -81,6 +81,7 @@ export default class LikeController implements LikeControllerI {
             });
     }
 
+
     userLikesTuit = (req: Request, res: Response) =>
             LikeController.likeDao.userLikesTuit(req.params.uid, req.params.tid).then((like: Like) => res.json(like));
 
