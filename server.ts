@@ -18,6 +18,7 @@ import TuitController from "./controllers/TuitController";
 import LikeController from "./controllers/LikeController";
 import SessionController from "./controllers/SessionController";
 import AuthenticationController from "./controllers/AuthenticationController";
+import DislikeController from "./controllers/DislikeController";
 import mongoose from "mongoose";
 import GroupController from "./controllers/GroupController";
 const cors = require("cors");
@@ -72,6 +73,7 @@ const likesController = LikeController.getInstance(app);
 SessionController(app);
 AuthenticationController(app);
 GroupController(app);
+DislikeController.getInstance(app);
 /**
  * Start a server listening at port 4000 locally
  * but use environment variable PORT on Heroku if available.
