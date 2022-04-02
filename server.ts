@@ -39,7 +39,7 @@ mongoose.connect(connectionString);
 const app = express();
 app.use(cors({
     credentials: true,
-    origin: 'http://localhost:3000'
+    origin: 'https://luxury-shortbread-b20d3c.netlify.app'
 }));
 
 let sess = {
@@ -47,12 +47,12 @@ let sess = {
     saveUninitialized: true,
     resave: true,
     cookie: {
-        sameSite: process.env.NODE_ENV === "dev" ? 'none' : 'lax',
-        secure: process.env.NODE_ENV === "dev",
+        sameSite: process.env.NODE_ENV === "production" ? 'none' : 'lax',
+        secure: process.env.NODE_ENV === "production",
     }
 }
 
-if (process.env.NODE_ENV === 'dev') {
+if (process.env.NODE_ENV === 'production') {
     app.set('trust proxy', 1) // trust first proxy
 }
 
